@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo - Vanità Boutique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="catalog-page">
+    <header>
+        <nav class="container">
+            <div class="logo">Vanità</div>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+                <li><a href="index.html#brand">I Nostri Brand</a></li>
+                <li><a href="catalogo.html" class="active">Catalogo</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#contatti">Contatti</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="catalog-hero">
+            <div class="container reveal">
+                <h1>Il Nostro Catalogo</h1>
+                <p>Esplora la nostra selezione esclusiva di accessori e bijoux</p>
+            </div>
+        </section>
+
+        <section class="catalog-content container">
+            <div class="catalog-controls reveal">
+                <div class="search-box">
+                    <input type="text" id="product-search" placeholder="Cerca un articolo...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-group">
+                    <select id="category-filter">
+                        <option value="all">Tutte le Categorie</option>
+                        <option value="Gioielli">Gioielli</option>
+                        <option value="Accessori">Accessori</option>
+                    </select>
+                    <select id="brand-filter">
+                        <option value="all">Tutte le Marche</option>
+                        <option value="Ottaviani">Ottaviani</option>
+                        <option value="Karakorum">Karakorum</option>
+                        <option value="Celeste G">Celeste G</option>
+                        <option value="I Bijoux dell'Anno">I Bijoux dell'Anno</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="catalog-grid" class="catalog-grid">
+                <!-- I prodotti verranno caricati qui via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Dettagli Prodotto -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-img" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-name"></h2>
+                    <h3 id="modal-brand"></h3>
+                    <p id="modal-price" class="price"></p>
+                    <p id="modal-description"></p>
+                    <button class="btn">Richiedi Informazioni</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vanità Boutique. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/catalogo.js"></script>
+</body>
+</html>

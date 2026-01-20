@@ -37,6 +37,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial call to reveal elements already in view
     revealOnScroll();
 
+    // Brand Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const brandCards = document.querySelectorAll('.brand-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active button
+            filterButtons.forEach(button => button.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            brandCards.forEach(card => {
+                const categories = card.getAttribute('data-category').split(' ');
+
+                if (filterValue === 'all' || categories.includes(filterValue)) {
+                    card.classList.remove('hidden');
+                    // Trigger reveal animation if not already active
+                    card.classList.add('active');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        });
+    });
+
     // Smooth Scrolling for Internal Links (already handled by CSS scroll-behavior: smooth,
     // but this ensures compatibility and can handle offset if needed)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

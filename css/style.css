@@ -177,11 +177,73 @@ section {
 }
 
 /* Brands Section */
-.brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.brands-layout {
+    display: flex;
+    gap: 3rem;
     margin-top: 3rem;
+}
+
+.brands-filter {
+    flex: 0 0 200px;
+    text-align: left;
+}
+
+.brands-filter h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-charcoal);
+}
+
+.filter-list {
+    list-style: none;
+}
+
+.filter-list li {
+    margin-bottom: 0.8rem;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 5px 0;
+    position: relative;
+}
+
+.filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-gold);
+    transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+    color: var(--color-gold);
+}
+
+.filter-btn.active::after {
+    width: 100%;
+}
+
+.brands-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.brand-card.hidden {
+    display: none;
 }
 
 .brand-card {
@@ -351,5 +413,26 @@ footer {
 
     h2 {
         font-size: 2rem;
+    }
+
+    .brands-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .brands-filter {
+        flex: none;
+        text-align: center;
+    }
+
+    .filter-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .filter-list li {
+        margin-bottom: 0;
     }
 }
